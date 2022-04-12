@@ -50,7 +50,7 @@ val_ds = tf.keras.preprocessing.image_dataset_from_directory(
 )
 
 model = classifier.make_model(input_shape=image_size + (3,), num_classes=2)
-keras.utils.plot_model(model, show_shapes=True)
+#keras.utils.plot_model(model, show_shapes=True)
 
 epochs = 50
 
