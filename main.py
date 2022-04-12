@@ -6,7 +6,7 @@ from tensorflow import keras
 
 
 src='https://dsti-aws-class.s3.eu-west-3.amazonaws.com/kagglecatsanddogs_3367a.zip'
-dst='/content/cats_and_dogs/data/raw'
+dst='./data/raw'
 
 loader.get_data(src,dst)
 loader.unzip_data(dst)
@@ -33,7 +33,7 @@ image_size = (180, 180)
 batch_size = 32
 
 train_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "/content/cats_and_dogs/data/raw/PetImages",
+    "./data/raw/PetImages",
     validation_split=0.2,
     subset="training",
     seed=1337,
@@ -41,7 +41,7 @@ train_ds = tf.keras.preprocessing.image_dataset_from_directory(
     batch_size=batch_size,
 )
 val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-    "/content/cats_and_dogs/data/raw/PetImages",
+    "./data/raw/PetImages",
     validation_split=0.2,
     subset="validation",
     seed=1337,

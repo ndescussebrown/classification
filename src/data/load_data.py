@@ -24,7 +24,7 @@ def unzip_data(my_dir):
 if __name__ == '__main__':
 # Make http request for remote file data
   print('starting download')
-  get_data('https://dsti-aws-class.s3.eu-west-3.amazonaws.com/kagglecatsanddogs_3367a.zip','/content/cats_and_dogs/data/raw')
+  get_data('https://dsti-aws-class.s3.eu-west-3.amazonaws.com/kagglecatsanddogs_3367a.zip','./data/raw')
   unzip_data('/content/classification/data/raw')
   my_file_regex = os.path.join(local_dir, '*.zip')
   my_file = glob.glob(my_file_regex)[0]
