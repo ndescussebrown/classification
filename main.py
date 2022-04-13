@@ -67,4 +67,26 @@ model.fit(
 )
 
 
+## mlflow
+run_name = 'Default'
+metric_name='accuracy'
+value=10
+
+mlflow.tracking.set_tracking_uri(TRACKING_URI)
+
+with mlflow.start_run(run_name=run_name) as run:
+mlflow.log_metric(metric_name,value)
+
+## SNS
+
+client=boto3.client('sns',region_name='eu-west-1')
+
+response=client.publish(
+TopicArn='arn:aws:sns:us-east-1:178511518038:classification',
+Message='Training done',
+Subject='Classification training'
+)
+
+print(response)
+
 
